@@ -15,7 +15,7 @@ import com.github.pagehelper.PageInfo;
 @Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.READ_COMMITTED, readOnly = true)
 public class PersonBiz {
 
-	private IPersonDao personDao;
+	private IPersonDao personDao;//提交
 
 	public PageInfo<Person> findPersonListByPage(Integer pageNum, Integer pageSize) {
 		PageHelper.startPage(pageNum, pageSize);
