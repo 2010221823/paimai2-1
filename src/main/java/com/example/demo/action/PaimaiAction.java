@@ -135,7 +135,7 @@ public class PaimaiAction {
 				message.put("msg", "敬请期待");
 			}else {
 				message.put("code", "300");
-				message.put("msg", "溜了溜了");
+				message.put("msg", "发生未知错误");
 			}
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -193,7 +193,7 @@ public class PaimaiAction {
 			}else{
 				pmpbiz.shangchu(pmpid);
 				message.put("code", "200");
-				message.put("msg", "溜了溜了");
+				message.put("msg", "发生未知错误");
 			}
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

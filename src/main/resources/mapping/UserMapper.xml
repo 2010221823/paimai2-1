@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.User" >
+<mapper namespace="com.example.demo.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.User" >
     <id column="userid" property="userid" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="usermm" property="usermm" jdbcType="VARCHAR" />
@@ -26,7 +26,7 @@
     delete from user
     where userid = #{userid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.accp.pojo.User" >
+  <insert id="insert" parameterType="com.example.demo.pojo.User" >
     insert into user (userid, username, usermm, 
       usersfz, userdh, userdz, 
       useryzbh, usersf, userwt, 
@@ -36,7 +36,7 @@
       #{useryzbh,jdbcType=VARCHAR}, #{usersf,jdbcType=INTEGER}, #{userwt,jdbcType=VARCHAR}, 
       #{userda,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.User" >
+  <insert id="insertSelective" parameterType="com.example.demo.pojo.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userid != null" >
@@ -103,7 +103,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.pojo.User" >
     update user
     <set >
       <if test="username != null" >
@@ -136,7 +136,7 @@
     </set>
     where userid = #{userid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.User" >
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.pojo.User" >
     update user
     set username = #{username,jdbcType=VARCHAR},
       usermm = #{usermm,jdbcType=VARCHAR},

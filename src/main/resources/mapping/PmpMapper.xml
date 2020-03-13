@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.PmpMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.Pmp" >
+<mapper namespace="com.example.demo.dao.PmpMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Pmp" >
     <id column="pmpid" property="pmpid" jdbcType="INTEGER" />
     <result column="pmpname" property="pmpname" jdbcType="VARCHAR" />
     <result column="pmpqpj" property="pmpqpj" jdbcType="VARCHAR" />
@@ -25,7 +25,7 @@
     delete from pmp
     where pmpid = #{pmpid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.accp.pojo.Pmp" >
+  <insert id="insert" parameterType="com.example.demo.pojo.Pmp" >
     insert into pmp (pmpid, pmpname, pmpqpj, 
       pmpdj, pmpkssj, pmpjssj, 
       pmptplj, pmptpkzm, pmpms
@@ -35,7 +35,7 @@
       #{pmptplj,jdbcType=VARCHAR}, #{pmptpkzm,jdbcType=VARCHAR}, #{pmpms,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.Pmp" >
+  <insert id="insertSelective" parameterType="com.example.demo.pojo.Pmp" >
     insert into pmp
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="pmpid != null" >
@@ -96,7 +96,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Pmp" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.pojo.Pmp" >
     update pmp
     <set >
       <if test="pmpname != null" >
@@ -126,7 +126,7 @@
     </set>
     where pmpid = #{pmpid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Pmp" >
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.pojo.Pmp" >
     update pmp
     set pmpname = #{pmpname,jdbcType=VARCHAR},
       pmpqpj = #{pmpqpj,jdbcType=VARCHAR},
